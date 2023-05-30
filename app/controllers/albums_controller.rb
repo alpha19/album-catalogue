@@ -1,6 +1,10 @@
 class AlbumsController < ApplicationController
     def index
-        render json: current_user.albums, each_serializer: AlbumSerializer
+        if logged_in? 
+            render json: current_user.albums, each_serializer: AlbumSerializer
+        else
+            render json: []
+        end
     end
 
     def create
