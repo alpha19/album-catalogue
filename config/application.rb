@@ -31,6 +31,6 @@ module AlbumCatalogue
     config.cache_store = :redis_store, ENV['CACHE_URL'],
                          { namespace: 'album_catalogue::cache' }
 
-    config.active_job.queue_adapter = :sidekiq
+    #config.active_job.queue_adapter = :sidekiq
   end
 end
