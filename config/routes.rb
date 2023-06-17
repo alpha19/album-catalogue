@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
   post "/logout", to: "sessions#destroy"
+
   get "/authorized", to: "sessions#show"
   get "/dashboard", to: "users#show"
+
+  post "/message/publish", to: "messages#publish"
+  mount ActionCable.server => '/cable'
 
   # Defines the root path route ("/")
   # root "articles#index"
